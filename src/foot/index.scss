@@ -1,0 +1,13 @@
+.footer{
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    a{
+        width: 50px;
+        text-align: center;
+    }
+}
