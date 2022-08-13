@@ -170,7 +170,7 @@ body {
 
 a,
 a:hover {
-  color: #333;
+  color: #333 !important;
 }
 
 * {

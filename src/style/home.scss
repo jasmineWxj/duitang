@@ -1,0 +1,21 @@
+.Home{
+    .adm-tabs-header{
+        border: none;
+    }
+    .adm-tabs-tab-line{
+        display: none;
+    }
+    .adm-tabs-tab-wrapper{
+        flex: 0;
+        padding: 0 7px;
+        .adm-tabs-tab{
+            font-size: 10px;
+            font-weight: 400;
+        }
+        .adm-tabs-tab-active{
+            font-size: 16px;
+            font-weight: bold;
+            color: #444;
+        }
+    }
+}

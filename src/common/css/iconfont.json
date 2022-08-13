@@ -1,0 +1,37 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "77039",
+      "name": "我",
+      "font_class": "wo",
+      "unicode": "f00f3",
+      "unicode_decimal": 983283
+    },
+    {
+      "icon_id": "145436",
+      "name": "首页",
+      "font_class": "shouye",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "1687281",
+      "name": "新人专享",
+      "font_class": "ziyuan",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    },
+    {
+      "icon_id": "11372762",
+      "name": "发现",
+      "font_class": "faxian",
+      "unicode": "e8c4",
+      "unicode_decimal": 59588
+    }
+  ]
+}
