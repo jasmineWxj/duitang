@@ -1,0 +1,16 @@
+.input_box{
+    height: 40px;
+    background: rgb(244, 243, 243);
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    svg{
+        width: 20px;
+        height: 20px;
+        fill: #aaa;
+    }
+    input{
+        margin-left: 5px;
+    }
+}
