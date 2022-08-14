@@ -50,3 +50,17 @@
       
     }
 }
+
+.Img{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .Imgbox{
+        width: 49%;
+        height: 320px;
+        border: 1px solid red;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+}

@@ -1,8 +1,8 @@
-import http from '../util/axiox'
+import http from '../utils/axios'
 
-function getArticleList(params) {
+function getImgList(start) {
     return new Promise((resolve, reject) => {
-        http("get", '/', params).then(res => {
+        http("get", `https://m.duitang.com/napi/index/hot/?start=${start}&limit=24&more=1&include_fields=sender%2Calbum`).then(res => {
             resolve(res);
         }, error => {
             console.log("网络异常~", error);
@@ -13,5 +13,5 @@ function getArticleList(params) {
 
 
 export {
-    getArticleList,
+    getImgList,
 }
