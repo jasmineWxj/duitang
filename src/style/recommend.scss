@@ -12,5 +12,41 @@
     }
     input{
         margin-left: 5px;
+        font-size: 16px;
+        color: #666;
+    }
+}
+.Swiper{
+    margin-top: 20px;
+   .swiper_img{
+        width: 100%;
+   }
+   img{
+    border-radius: 10px;
+   }
+}
+.Throne{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    .throne-box{
+        width: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .throne_img{
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(252, 132, 132, .2);
+            border-radius: 50%;
+            img {
+                width: 25px;
+                height: 25px;
+                }
+        }
+      
     }
 }
