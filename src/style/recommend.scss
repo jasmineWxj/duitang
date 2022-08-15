@@ -58,9 +58,29 @@
     justify-content: space-between;
     .Imgbox{
         width: 49%;
-        height: 320px;
-        border: 1px solid red;
+        // height: 420px;
         border-radius: 10px;
         margin-bottom: 20px;
+        .Imgbox_img{
+            img{
+                display: block;
+                border-radius: 5px;
+                height: 323px;
+            }
+        
+        }
+        .Imgbox_text{
+            margin: 5px 0;
+        }
+        .Imgbox_sender{
+            display: flex;
+            
+        }
+        .Imgbox_sender_img{
+                display: block;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+        }
     }
 }

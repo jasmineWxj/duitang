@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react'
-import { getImgList } from '../http/index'
+import { getImgList, getImgwallpaper } from '../http/index'
 import { Image } from 'antd-mobile'
 import '../style/recommend.scss'
 import { debounce, getTop } from '../common/js/fangdou'
@@ -7,7 +7,7 @@ const Img = () => {
     const [imglist,setImglist] = useState([]);
     const [start, setStart] = useState(0)
     useEffect(()=>{
-        getImgList(start).then(res=>{
+        getImgwallpaper(start).then(res=>{
             if (res.status === 1 && res.data.object_list.length > 1){
                 setStart(start+24)
                 console.log(res.data.object_list,'res.data.object_list');
@@ -36,9 +36,18 @@ const Img = () => {
         <div className='Img'>
             {
                 imglist.map((item,index) => {
+                    let h = item.photo.height / 5 + 'px'
+                    let w = item.photo.width / 5 + 'px'
                     return (
                         <div key={index} className='Imgbox'>
-                            {index}
+                            <div className='Imgbox_img'>
+                                <img src={item.photo.path} style={{ width: '182px'}} />
+                            </div>
+                            <div className='Imgbox_text'>{item.msg}</div>
+                            <div className='Imgbox_sender'>
+                                <img src={item.sender.avatar} className='Imgbox_sender_img'/>
+                                <span>{item.sender.username}</span>
+                            </div>
                         </div>
                     )
                 })
