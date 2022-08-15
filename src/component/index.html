@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            overflow-y: scroll;
+            height: 600px;
+        }
+        li{
+            list-style: none;
+            width: 100%;
+            height: 100px;
+            border: 1px solid red;
+        }
+        .please{
+            background: red;
+            transform:rotate(0deg);
+            transition: 2s;
+        }
+    </style>
+</head>
+<body>
+    <header>头部</header>
+
+   <div>
+     <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        <li>11</li>
+        <li>12</li>
+        <li>13</li>
+        <li>14</li>
+        <li>15</li>
+        <li>16</li>
+        <li>17</li>
+        <li>18</li>
+        <li>19</li>
+        <div class="please">请刷新我</div>
+    </ul>
+   </div>
+    <script>
+        var ul = document.querySelector('ul')
+        var ple = document.querySelector('.please')
+        ul.addEventListener('touchstart',function(even){//241 //250
+            // console.log(ul.clientHeight); // 高度
+            // console.log(ul.scrollTop + ul.clientHeight); // 卷曲的高度
+            // console.log(ul.scrollHeight);
+            if(ul.scrollTop + ul.clientHeight === ul.scrollHeight){
+                // console.log(ul.scrollTop + ul.clientHeight,ul.scrollHeight,'开始');
+                ul.addEventListener('touchmove',function(e){
+                    if(ul.scrollTop + ul.clientHeight === ul.scrollHeight){
+                        var a = Math.round(e.changedTouches[0].clientX)
+                        var b = Math.round(even.changedTouches[0].clientX)
+                        // console.log(a-b,'距离');
+                        if(a-b >= 20){
+                            console.log(360/20);
+                            ple.style.background = 'pink';
+                            ple.style.transform = `rotate(180deg)`
+                        }else{
+                             ple.style.background = 'red'
+                        }
+                        ul.addEventListener('touchend',function(){
+                            ple.style.background = 'red'
+                            ple.style.transform = `rotate(0deg)`
+
+                        })
+                    }
+                })
+            }
+       
+        })
+    </script>
+    
+</body>
+</html>
