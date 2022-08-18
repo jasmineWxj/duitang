@@ -6,14 +6,14 @@ import '../common/css/iconfont.css'
 
 const Footer = () => {
     const { pathname } = useLocation()
+  
     function path(params){
-        console.log(params, pathname);
         if ('/' + params === pathname){
             return 'current actives_' + params
         }
     }
     return (
-        <div className='footer'>
+        <div className='footer' >
             <Link to="/" className={path('')}>
                 <span class="iconfont icon-shouye"></span>
                 <div>首页</div>

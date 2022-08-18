@@ -3,6 +3,7 @@ import { getImgList, getImgwallpaper } from '../http/index'
 import { Image } from 'antd-mobile'
 import '../style/recommend.scss'
 import { debounce, getTop } from '../common/js/fangdou'
+import { Link, useLocation } from 'react-router-dom'
 const Img = () => {
     const [imglist,setImglist] = useState([]);
     const [start, setStart] = useState(0)
@@ -10,7 +11,7 @@ const Img = () => {
         getImgwallpaper(start).then(res=>{
             if (res.status === 1 && res.data.object_list.length > 1){
                 setStart(start+24)
-                console.log(res.data.object_list,'res.data.object_list');
+                // console.log(res.data.object_list,'res.data.object_list');
                 setImglist([...res.data.object_list])
 
             }
@@ -39,7 +40,7 @@ const Img = () => {
                     let h = item.photo.height / 5 + 'px'
                     let w = item.photo.width / 5 + 'px'
                     return (
-                        <div key={index} className='Imgbox'>
+                        <Link to={`/${item.album.id}`} key={index} className='Imgbox'>
                             <div className='Imgbox_img'>
                                 <img src={item.photo.path} style={{ width: '182px'}} />
                             </div>
@@ -48,7 +49,7 @@ const Img = () => {
                                 <img src={item.sender.avatar} className='Imgbox_sender_img'/>
                                 <span>{item.sender.username}</span>
                             </div>
-                        </div>
+                        </Link>
                     )
                 })
             }

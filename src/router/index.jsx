@@ -4,12 +4,14 @@ import Home from '../page/Home'
 const Find = lazy(() => import('../page/Find'))
 const Vip = lazy(() => import('../page/Vip'))
 const Mine = lazy(() => import('../page/Mine'))
+const Homeimg = lazy(()=>import('../component/Homeimg'))
 const RouteConfigs = () => {
     return (
         <div>
             <Suspense fallback={<div>Loading...</div>}>
                 <Routes>
                     <Route path="/" element={<Home />}></Route>
+                    <Route path='/:id' element={<Homeimg />}></Route>
                     <Route path="/find" element={<Find />}></Route>
                     <Route path="/vip" element={<Vip />}></Route>
                     <Route path="/mine" element={<Mine />}></Route>
